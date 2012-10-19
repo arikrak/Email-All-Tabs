@@ -2,7 +2,7 @@
 	"name": "Email All Tabs",
 	"description": "This extension lets you email all tabs in current window", 
   
-	"version": "0.31",
+	"version": "0.4",
 	"manifest_version": 2,
 
 	  "background": {
@@ -10,7 +10,9 @@
   },
 	
 	"permissions": [
-		"tabs"
+		"tabs",
+		"https://www.googleapis.com/"
+
 	],
 	
 	"icons": {

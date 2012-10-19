@@ -38,12 +38,36 @@ function makeTitle(title)
     return encodeURIComponent(title) +" * ";
 }
 
-  //any way to encode href link in mailto?
-  //return encodeURIComponent("<a href=\""+url+"\">"+title+"</a>");
-
 function emailTabs() {
     chrome.tabs.getAllInWindow(null, function(tabs){
         var fulldata = getTabs(tabs);
         chrome.tabs.create({ url: fulldata });
     });
 }
+
+function getShortURL(long_url)
+{
+var xmlHttp = new XMLHttpRequest();
+
+xmlHttp.open("POST", "https://www.googleapis.com/urlshortener/v1/url", true);
+xmlHttp.setRequestHeader("Content-Type", "application/json; charset=utf-8");
+
+var req = new Object();
+req.longUrl = long_url;
+
+var jsonStr = JSON.stringify(req);
+xmlHttp.send(jsonStr);
+
+var short_url = JSON.parse(jsonStr).id ; //remove tostringandback loop
+
+//add check for success in json or string
+if(short_url!= null && short_url.substring(0,4)=="http"){
+  return short_url;
+}
+else{
+  return long_url; //**or nothing if nec.. ** 
+}
+
+
+}
+
