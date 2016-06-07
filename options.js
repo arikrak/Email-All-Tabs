@@ -1,8 +1,8 @@
 // Saves options to localStorage.
 function save_options() {
-  var select = document.getElementById("sendTitle");
-  var sendTitle = select.children[select.selectedIndex].value;
-  localStorage["sendTitle"] = sendTitle;
+  var select = document.getElementById("legacy");
+  var legacy = select.children[select.selectedIndex].value;
+  localStorage["legacy"] = legacy;
 
   var input = document.getElementById("signature");
   var signature = input.value;
@@ -19,23 +19,16 @@ function save_options() {
 // Restores select box state to saved value from localStorage.
 //can switch to radio button
 function restore_options() {
-  var select = document.getElementById("sendTitle");
-  var boolTitle = localStorage["sendTitle"];
-  if(boolTitle == "true"){
+  var select = document.getElementById("legacy");
+  if(localStorage["legacy"] == "true"){
     select.children[0].selected  = "true";
   }
   else{
     select.children[1].selected = "true";
   }
-
-  var signature = localStorage["signature"];
-  if(signature==null){
-    signature = "--Sent with Email All Tabs";
-  }
   var selText = document.getElementById("signature");
-  selText.value = signature;
+  if(localStorage["signature"]) selText.value = localStorage["signature"];
 }
-
 
 document.addEventListener('DOMContentLoaded', restore_options);
 document.querySelector('#save').addEventListener('click', save_options);

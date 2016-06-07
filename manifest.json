@@ -2,7 +2,7 @@
 	"name": "Email All Tabs",
 	"description": "This extension lets you email all tabs in current window, and shortens long URLs", 
   
-	"version": "0.60",
+	"version": "0.80",
 	"manifest_version": 2,
 
 	"options_page": "options.html",
@@ -14,8 +14,7 @@
 	"permissions": [
 		"tabs",
 		"storage",
-		"https://www.googleapis.com/"
-
+		"clipboardWrite"
 	],
 	
 	"icons": {
