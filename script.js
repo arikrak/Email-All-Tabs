@@ -1,5 +1,12 @@
 chrome.browserAction.onClicked.addListener(emailTabs);
 
+// Display options when extension updates.
+chrome.runtime.onInstalled.addListener(function(details){
+  if (details.reason == chrome.runtime.OnInstalledReason.UPDATE){
+    chrome.tabs.create({url: "options.html"});
+  }
+});
+
 /*
  * Create new mailto tab.
  */
@@ -28,7 +35,7 @@ function tabsToClipboard(tabs) {
   + "hgebccnmgpigdgkbenjkamcnioejlghh'>Email all Tabs</a>";
   text += localStorage["signature"] || defaultSignature;
   copyToClipboard(text);
-  chrome.tabs.create({ url: "mailto:" });
+  chrome.tabs.create({ url: "mailto:?body=Paste%20copied%20links%20here" });
 }
 
 // Copy text to clipboard, from the internet.

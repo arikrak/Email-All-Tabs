@@ -1,24 +1,44 @@
 <html>
-<head><title>Email Tabs Options</title></head>
-
+<head>
+<title>Email Tabs Options</title>
+</head>
 <body>
+<div style="margin: 20px;">
+	<h1>Email All Tabs - New Options</h1>
+	<p>Email all tabs lets you email all tabs in a browser window. You have two options in version 0.8:</p>
+	<ul>
+	  <li>New option (recommended) - Opens new email and copies all tabs to clipboard. Paste the copied tabs into the email (with ctrl-V), and it will display the titles of each tab.</li>
+	  <li>Legacy option - Automatically pastes the URLs into your email, but leaves out the titles (and sometimes some URLs).</li>	  
+	</ul>
+		
+	</p>
+	<select id="legacy">
+	  <option value="false">New - Paste links with titles in email</option>
+	  <option value="true">Legacy - Auto paste URLs into email</option>
+	</select>
 
-<h2> Email All Tabs Options </h2>
+	 <br><br>
+	Signature at End:
+	<input type="text" name="signature" id="signature" >
 
-<select id="legacy">
- <option value="true">Legacy - Auto pastes URLs only in email.</option>
- <option value="false">New - Paste HTML links in your email.</option>
-</select>
+	<br><br>
+	<button id="save">Save</button>
+	<br>
+	<div id="status"></div>
 
- <br>
-Signature at End:
-<input type="text" name="signature" id="signature" >
+	<h3 style="margin-top: 40px;">Tips</h3>
+	<ul>
+	<li>Make sure to set your preferred email provider for email links, or this extension won't work (see instructions <a href="http://blog.hubspot.com/marketing/set-gmail-as-browser-default-email-client-ht">here</a>).</li>
+	<li>Combine this extension with a simple tab manager, such as <a href="https://chrome.google.com/webstore/detail/tab-scissors/cdochbecpfdpjobpgnacnbepkgcfhoek">Tab Scissors</a> so you can quickly choose which tabs to email.</li>
+	<li>Just want to save tabs without emailing anyone? You can save your email as a draft, or paste in the links elsewhere!</li>
+	</ul>
 
-<br>
-<button id="save">Save</button>
-<div id="status"></div>
+	<p style="margin-top: 20px;">
+	Interested in learning programming? Check out my website
+	<a href="https://www.learneroo.com/">Learneroo.com</a>.
+	</p>
+</div>
+
 </body>
-
 <script src="options.js"></script>
-
 </html>

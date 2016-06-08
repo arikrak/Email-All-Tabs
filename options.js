@@ -21,10 +21,10 @@ function save_options() {
 function restore_options() {
   var select = document.getElementById("legacy");
   if(localStorage["legacy"] == "true"){
-    select.children[0].selected  = "true";
+    select.children[1].selected  = "true";
   }
   else{
-    select.children[1].selected = "true";
+    select.children[0].selected = "true";
   }
   var selText = document.getElementById("signature");
   if(localStorage["signature"]) selText.value = localStorage["signature"];
