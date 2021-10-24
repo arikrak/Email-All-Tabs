@@ -1,8 +1,8 @@
 {	
 	"name": "Email All Tabs",
-	"description": "This extension lets you email all tabs in current window, and shortens long URLs", 
+	"description": "This extension copies your current tabs to the clipboard so you can easily email them.", 
   
-	"version": "0.80",
+	"version": "0.81",
 	"manifest_version": 2,
 
 	"options_page": "options.html",
@@ -13,7 +13,6 @@
 	
 	"permissions": [
 		"tabs",
-		"storage",
 		"clipboardWrite"
 	],
 	
